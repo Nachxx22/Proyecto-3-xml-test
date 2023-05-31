@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Root>
+    <Instancia1 Atributo1="Valor1"/>
+    <Instancia2 Atributo2="Valor2"/>
+    <Instancia3 Atributo3="Valor3"/>
+</Root>
