@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<row>
+		<ID>3322</ID>
+		<Nombre>Carlos</Nombre>
+		<Edad>24</Edad>
+		<Carrera>Computadores</Carrera>
+		<Curso>Datos</Curso>
+		<Nota>80</Nota>
+		<Estado>Aprobada</Estado>
+		<Profesor>Marcos</Profesor>
+	</row>
+	<row>
+		<ID>1024</ID>
+		<Nombre>Felipe</Nombre>
+		<Edad>20</Edad>
+		<Carrera>Industrial</Carrera>
+		<Curso>Calculo</Curso>
+		<Nota>50</Nota>
+		<Estado>Reprobada</Estado>
+		<Profesor>Diego</Profesor>
+	</row>
+	<row>
+		<ID>3052</ID>
+		<Nombre>Juan</Nombre>
+		<Edad>22</Edad>
+		<Carrera>Electronica</Carrera>
+		<Curso>Fisica</Curso>
+		<Nota>null</Nota>
+		<Estado>Pendiente</Estado>
+		<Profesor>Luis</Profesor>
+	</row>
+	<row>
+		<ID>2060</ID>
+		<Nombre>Jose</Nombre>
+		<Edad>25</Edad>
+		<Carrera>Computadores</Carrera>
+		<Curso>Calculo</Curso>
+		<Nota>null</Nota>
+		<Estado>Incompleta</Estado>
+		<Profesor>Gerardo</Profesor>
+	</row>
+</data>
