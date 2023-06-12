@@ -1,0 +1,21 @@
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+td {
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+td:last-child {
+  border-right: none;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.column-divider {
+  border-right: 1px solid black;
+}

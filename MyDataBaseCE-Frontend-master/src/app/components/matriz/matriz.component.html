@@ -1,0 +1,36 @@
+<div style="display: flex; flex-direction: column;">
+  <div style="display: flex; align-items: center;">
+    <textarea [(ngModel)]="instructionText" placeholder="Enter instructions" style="width: 500px; height: 200px;"></textarea>
+    <div style="margin-left: 20px; display: flex; flex-direction: column; justify-content: center;">
+      <div *ngIf="responseMatrix">
+        <h4>{{ responseMatrix.name }}</h4>
+        <table>
+          <tr *ngFor="let row of responseMatrix.matrix">
+            <td *ngFor="let cell of row">{{ cell }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+    <button (click)="sendInstructions()">Enviar</button>
+    <button (click)="sendInstructions2()" style="margin-left: 10px;">Commit</button>
+  </div>
+  <div *ngFor="let matrix of matrices" style="margin-top: 20px;">
+    <h3 class="matrix-name-divider">{{ matrix.name }}</h3>
+    <table>
+      <tbody>
+      <tr class="matrix-divider"></tr>
+      <ng-container *ngFor="let row of matrix.matrix; let rowIndex = index">
+        <tr>
+          <td *ngFor="let cell of row">{{ cell }}</td>
+        </tr>
+        <tr class="row-divider" *ngIf="rowIndex !== matrix.matrix.length - 1"></tr>
+      </ng-container>
+      <tr class="matrix-divider"></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+

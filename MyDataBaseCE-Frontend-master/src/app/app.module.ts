@@ -1,29 +1,29 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TreeViewModule } from '@syncfusion/ej2-angular-navigations';
-import { ConexionComponent } from './conexion/conexion.component';
 import { LoginComponent } from './components/login/login.component';
+
 import { RegisterComponent } from './components/register/register.component';
-
-
-
+import { HomeComponent } from './components/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { MatrizComponent } from './components/matriz/matriz.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ConexionComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent,
+    MatrizComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule,
-    TreeViewModule
-
-
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
