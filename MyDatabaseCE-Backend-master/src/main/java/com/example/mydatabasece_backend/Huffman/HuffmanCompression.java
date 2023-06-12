@@ -4,8 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
+/**
+ * Clase que proporciona funcionalidades para realizar compresión y descompresión de texto utilizando el algoritmo de Huffman.
+ */
 public class HuffmanCompression {
 
+    /**
+     * Construye el árbol de Huffman utilizando un mapa de frecuencias de caracteres.
+     *
+     * @param frequencyMap El mapa de frecuencias de caracteres.
+     * @return El nodo raíz del árbol de Huffman construido.
+     */
     public static HuffmanNode buildHuffmanTree(Map<Character, Integer> frequencyMap) {
         PriorityQueue<HuffmanNode> pq = new PriorityQueue<>();
         for (Map.Entry<Character, Integer> entry : frequencyMap.entrySet()) {
@@ -22,6 +31,13 @@ public class HuffmanCompression {
         return pq.poll();
     }
 
+    /**
+     * Comprime un texto original utilizando el árbol de Huffman especificado.
+     *
+     * @param originalText El texto original a comprimir.
+     * @param root         El nodo raíz del árbol de Huffman.
+     * @return El texto comprimido.
+     */
     public static String compress(String originalText, HuffmanNode root) {
         Map<Character, String> encodingMap = buildEncodingMap(root);
         StringBuilder compressed = new StringBuilder();
@@ -33,6 +49,13 @@ public class HuffmanCompression {
         return compressed.toString();
     }
 
+    /**
+     * Descomprime un texto comprimido utilizando el árbol de Huffman especificado.
+     *
+     * @param compressed El texto comprimido.
+     * @param root       El nodo raíz del árbol de Huffman.
+     * @return El texto descomprimido.
+     */
     public static String decompress(String compressed, HuffmanNode root) {
         StringBuilder decompressed = new StringBuilder();
         HuffmanNode current = root;
@@ -69,6 +92,12 @@ public class HuffmanCompression {
         }
     }
 
+    /**
+     * Calcula el mapa de frecuencias de caracteres para un texto dado.
+     *
+     * @param originalText El texto original.
+     * @return El mapa de frecuencias de caracteres.
+     */
     public static Map<Character, Integer> calculateFrequencyMap(String originalText) {
         Map<Character, Integer> frequencyMap = new HashMap<>();
         for (char c : originalText.toCharArray()) {

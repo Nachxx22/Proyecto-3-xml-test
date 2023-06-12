@@ -1,10 +1,20 @@
 package com.example.mydatabasece_backend.ConexionArduino;
 import com.fazecast.jSerialComm.*;
 
+/**
+ * Clase que proporciona métodos para comunicación serial con un dispositivo Arduino.
+ */
 public class SerialCommunication {
 
     private static SerialPort serialPort;
     private static StringBuilder concatenatedString = new StringBuilder();
+
+
+    /**
+     * Obtiene el valor actual del string concatenado y lo devuelve como un StringBuilder.
+     *
+     * @return El string concatenado sin los caracteres de nueva línea.
+     */
     public static StringBuilder getConcatenatedString() {
         if (concatenatedString != null) {
             String data = concatenatedString.toString().replaceAll("\\r\\n|\\r|\\n", "");
@@ -14,6 +24,12 @@ public class SerialCommunication {
         }
     }
 
+    /**
+     * Lee los datos del puerto serial provenientes de Arduino y los concatena en un string.
+     * La lectura se detiene después de un cierto período de tiempo.
+     *
+     * @return La contraseña obtenida del dispositivo Arduino.
+     */
     public static String lectorArduino() {
         // Obtén una instancia de la librería jSerialComm
         serialPort = SerialPort.getCommPort("COM3"); // Reemplaza "COM3" con el puerto serial correcto
@@ -81,6 +97,11 @@ public class SerialCommunication {
         return null;
     }
 
+    /**
+     * Envía un dato al dispositivo Arduino a través del puerto serial.
+     *
+     * @param dato El dato a enviar al dispositivo Arduino.
+     */
     public static void enviarDato(String dato) {
 
         serialPort = SerialPort.getCommPort("COM3"); // Reemplaza "COM3" con el puerto serial correcto
@@ -107,11 +128,16 @@ public class SerialCommunication {
         byte[] data = comando.getBytes();
         serialPort.writeBytes(data, data.length);
         System.out.println("Dato enviado: " + dato);
+        serialPort.closePort();
+        System.out.println("Puerto serial cerrado");
+
     }
     static String contraseña = "";
        /* public static void encenderLuz() {
                 enviarArduino("1");
         }*/
 }
+
+
 
 
