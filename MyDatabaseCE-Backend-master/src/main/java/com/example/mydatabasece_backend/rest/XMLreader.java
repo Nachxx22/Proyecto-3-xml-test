@@ -1,4 +1,4 @@
-package XML;
+package com.example.mydatabasece_backend.rest;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -9,6 +9,8 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class XMLreader {
     public static void main(String[] args) {
@@ -16,6 +18,9 @@ public class XMLreader {
         //String rutaProyecto = System.getProperty("user.dir");
         //String filePath = rutaProyecto + "/src/" + nombreArchivo + "/" + nombreArchivo + ".xml";
         readXML("NotaCursos");
+        Map<String, String> map = new HashMap<>();
+        map.put("key1", "value1");
+        map.put("key2", "value2");
     }
 
     public static String[][] readXML(String nombreArchivo) {
@@ -87,7 +92,6 @@ public class XMLreader {
 
         } catch (ParserConfigurationException | SAXException | IOException e) {
             System.out.println("Error al leer el archivo XML: " + e.getMessage());
-            return new String[0][];
         }
         return new String[0][];
     }
